@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'EYECANDY The Hague',
+      title: 'MJS Entertainment',
       theme: ThemeData(
         primarySwatch: Colors.grey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -93,10 +93,13 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           )
-        : WebView(
+        : SecondScreen();
+        
+        
+    /*    WebView(
             initialUrl: 'https://eyecandy.salonized.com/widget_bookings/new',
             javascriptMode: JavascriptMode.unrestricted,
             debuggingEnabled: true,
-          );
+          );*/
   }
 }

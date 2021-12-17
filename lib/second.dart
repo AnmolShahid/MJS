@@ -89,7 +89,11 @@ class _SecondScreenState extends State<SecondScreen> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: () {},
+      onWillPop:(){
+           Navigator.pop(context, 'Back');
+          return new Future(() => false);
+      }
+      ,
       child: Scaffold(
         // appBar: AppBar(
         //   automaticallyImplyLeading: false,
@@ -117,7 +121,7 @@ class _SecondScreenState extends State<SecondScreen> {
                         bottom: 14,
                       ),
                       child: Text(
-                        "Welkom in de app van EYECANDY The Hague!",
+                        "Welcome Text",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 16,
@@ -130,7 +134,7 @@ class _SecondScreenState extends State<SecondScreen> {
                         vertical: 14,
                       ),
                       child: Text(
-                        "Boek gemakkelijk je afspraak in voor een nieuwe set one by one wimperextensions of het opvullen ervan.",
+                        "Some Other Text.",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 16,
@@ -143,7 +147,7 @@ class _SecondScreenState extends State<SecondScreen> {
                         vertical: 14,
                       ),
                       child: Text(
-                        "Je kan tot uiterlijk 2 uur van te voren een afspraak inplannen. Staat de gewenste dag/tijd er niet bij?  Druk dan op het WhatsApp icoontje en stuur een bericht!",
+                        "text",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 16,
