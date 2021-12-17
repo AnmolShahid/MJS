@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SecondScreen extends StatefulWidget {
   @override
   _SecondScreenState createState() => _SecondScreenState();
 }
+
 //https://mjsentertainment.co.uk/app-home/
 //https://mjsentertainment.co.uk/app-contact-us/
 //https://www.youtube.com/channel/UC-tTVRgSWvYhtQNTIjwoaQg?view_as=subscriber
@@ -27,8 +28,9 @@ class _SecondScreenState extends State<SecondScreen> {
     }
   }
 
-  _launchgiftcard() async {
-    const url = 'https://giftcard.sumup.io/order/GWTQRTC/kay';
+  _launchYoutube() async {
+    const url =
+        'https://www.youtube.com/channel/UC-tTVRgSWvYhtQNTIjwoaQg?view_as=subscriber';
     if (await canLaunch(url)) {
       await launch(
         url,
@@ -40,8 +42,8 @@ class _SecondScreenState extends State<SecondScreen> {
     }
   }
 
-  _launchask() async {
-    const url = 'https://eyecandy.salonized.com/widget_bookings/new';
+  _launchHome() async {
+    const url = 'https://mjsentertainment.co.uk/app-home/';
     if (await canLaunch(url)) {
       await launch(
         url,
@@ -54,7 +56,7 @@ class _SecondScreenState extends State<SecondScreen> {
   }
 
   _launchIG() async {
-    const url = 'https://instagram.com/eyecandy.thehague';
+    const url = 'https://www.instagram.com/mjsentertainments/';
     if (await canLaunch(url)) {
       await launch(
         url,
@@ -66,8 +68,8 @@ class _SecondScreenState extends State<SecondScreen> {
     }
   }
 
-  _launchWH() async {
-    const url = 'https://wa.me/31639222112';
+  _launchContact() async {
+    const url = 'https://mjsentertainment.co.uk/app-contact-us/';
     if (await canLaunch(url)) {
       await launch(
         url,
@@ -92,11 +94,10 @@ class _SecondScreenState extends State<SecondScreen> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop:(){
-           Navigator.pop(context, 'Back');
-          return new Future(() => false);
-      }
-      ,
+      onWillPop: () {
+        Navigator.pop(context, 'Back');
+        return new Future(() => false);
+      },
       child: Scaffold(
         // appBar: AppBar(
         //   automaticallyImplyLeading: false,
@@ -111,11 +112,12 @@ class _SecondScreenState extends State<SecondScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Image.asset('assets/images/logo.png',
-                      fit: BoxFit.cover),
+                  padding: const EdgeInsets.only(
+                      top: 30, left: 15.0, right: 15.0, bottom: 15),
+                  child:
+                      Image.asset('assets/images/logo.png', fit: BoxFit.cover),
                 ),
-                Column(
+                /*  Column(
                   children: <Widget>[
                     Padding(
                       padding: const EdgeInsets.only(
@@ -158,59 +160,145 @@ class _SecondScreenState extends State<SecondScreen> {
                       ),
                     ),
                   ],
-                ),
+                ),*/
                 SizedBox(
                   height: 20,
                 ),
                 GestureDetector(
-                  onTap: _launchask,
+                  onTap: _launchHome,
                   child: Container(
-                    height: 100,
-                    color: Colors.grey,
-                    width: MediaQuery.of(context).size.width,
-                    margin: EdgeInsets.all(20),
-                    padding: EdgeInsets.all(20),
-                    child: Column(children: [
-                         Image.asset(
-                    "assets/images/asf.jpeg",
-                    fit: BoxFit.cover,
-                    height: 70,
-                  ),
-                  SizedBox(height: 10,),
-                   Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 25.0,
-                        vertical: 14,
-                      ),
-                      child: Text(
-                        "Home",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 16,
-                        ),
-                      ),
-                    ),
-                    ],)
-                  
-                  ),
+                      height: 200,
+                      color: Colors.grey,
+                      width: MediaQuery.of(context).size.width,
+                      margin: EdgeInsets.all(20),
+                      padding: EdgeInsets.all(20),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          /*Image.asset(
+                            "assets/images/asf.jpeg",
+                            fit: BoxFit.cover,
+                            height: 70,
+                          ),*/
+                          Icon(
+                            Icons.home_outlined,
+                            color: Colors.white,
+                            size: 90,
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 25.0,
+                              vertical: 14,
+                            ),
+                            child: Text(
+                              "Home",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                          ),
+                        ],
+                      )),
                 ),
                 GestureDetector(
-                  onTap: _launchgiftcard,
-                  child: Image.asset(
-                    "assets/images/giftcard.jpeg",
-                    fit: BoxFit.cover,
-                    height: 70,
+                  onTap: _launchContact,
+                  child: Container(
+                      height: 200,
+                      color: Colors.grey,
+                      width: MediaQuery.of(context).size.width,
+                      margin: EdgeInsets.all(20),
+                      padding: EdgeInsets.all(20),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            "assets/images/contact.png",
+                            fit: BoxFit.cover,
+                            height: 70,
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 25.0,
+                              vertical: 14,
+                            ),
+                            child: Text(
+                              "Contact Us",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                          ),
+                        ],
+                      )),
+                ),
+                SizedBox(
+                  height: 50,
+                ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      GestureDetector(
+                          onTap: _launchFB,
+                          child: Container(
+                            margin: EdgeInsets.all(15),
+                            width: 80.0,
+                            height: 80.0,
+                            decoration: new BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                            ),
+                            child: Icon(
+                              FontAwesomeIcons.facebookF,
+                              size: 40,
+                            ),
+                          )),
+                      GestureDetector(
+                          onTap: _launchYoutube,
+                          child: Container(
+                            margin: EdgeInsets.all(15),
+                            width: 80.0,
+                            height: 80.0,
+                            decoration: new BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                            ),
+                            child: Icon(
+                              FontAwesomeIcons.youtube,
+                              size: 40,
+                            ),
+                          )),
+                      GestureDetector(
+                          onTap: _launchIG,
+                          child: Container(
+                            margin: EdgeInsets.all(15),
+                            width: 80.0,
+                            height: 80.0,
+                            decoration: new BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                            ),
+                            child: Icon(
+                              FontAwesomeIcons.instagram,
+                              size: 40,
+                            ),
+                          )),
+                    ],
                   ),
                 ),
-                GestureDetector(
-                  onTap: _launchWH,
-                  child: Image.asset(
-                    "assets/images/whatsapp.jpeg",
-                    fit: BoxFit.cover,
-                    height: 70,
-                  ),
-                ),
-                GestureDetector(
+
+                /*   GestureDetector(
                   onTap: _launchIG,
                   child: Image.asset(
                     "assets/images/instagram.jpeg",
@@ -226,7 +314,7 @@ class _SecondScreenState extends State<SecondScreen> {
                     height: 70,
                   ),
                 ),
-                //   Center(
+              */ //   Center(
                 //     child:  JumpingDotsProgressIndicator(
                 //   fontSize: 40.0,
                 //   numberOfDots: 4,

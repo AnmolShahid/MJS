@@ -66,6 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
     call();
     return i == 0
         ? Scaffold(
+            backgroundColor: Colors.black,
             body: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -75,12 +76,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       left: 25.0,
                       right: 25.0,
                     ),
-                    child: Image.asset('assets/images/eyecandylogo.png'),
+                    child: Image.asset('assets/images/logo.png'),
                   ),
                   JumpingDotsProgressIndicator(
                     fontSize: 40.0,
                     numberOfDots: 4,
-                    color: Colors.black,
+                    color: Colors.white,
                   )
                   // Padding(
                   //   padding: const EdgeInsets.only(top: 0.0, bottom: 20.0),
@@ -94,8 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           )
         : SecondScreen();
-        
-        
+
     /*    WebView(
             initialUrl: 'https://eyecandy.salonized.com/widget_bookings/new',
             javascriptMode: JavascriptMode.unrestricted,
