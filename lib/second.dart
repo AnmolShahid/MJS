@@ -6,10 +6,13 @@ class SecondScreen extends StatefulWidget {
   @override
   _SecondScreenState createState() => _SecondScreenState();
 }
-
+//https://mjsentertainment.co.uk/app-home/
+//https://mjsentertainment.co.uk/app-contact-us/
+//https://www.youtube.com/channel/UC-tTVRgSWvYhtQNTIjwoaQg?view_as=subscriber
+//https://www.instagram.com/mjsentertainments/
 class _SecondScreenState extends State<SecondScreen> {
   _launchFB() async {
-    const url = 'https://facebook.com/eyecandythehague';
+    const url = 'https://web.facebook.com/MJSEntertainments?_rdc=1&_rdr';
 
     if (await canLaunch(
       url,
@@ -100,7 +103,7 @@ class _SecondScreenState extends State<SecondScreen> {
         //   title:
         //       Image.asset('assets/images/eyecandylogo.png', fit: BoxFit.cover),
         // ),
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.black,
         body: ListView(
           children: <Widget>[
             Column(
@@ -109,7 +112,7 @@ class _SecondScreenState extends State<SecondScreen> {
               children: <Widget>[
                 Padding(
                   padding: const EdgeInsets.all(15.0),
-                  child: Image.asset('assets/images/eyecandylogo.png',
+                  child: Image.asset('assets/images/logo.png',
                       fit: BoxFit.cover),
                 ),
                 Column(
@@ -161,10 +164,34 @@ class _SecondScreenState extends State<SecondScreen> {
                 ),
                 GestureDetector(
                   onTap: _launchask,
-                  child: Image.asset(
+                  child: Container(
+                    height: 100,
+                    color: Colors.grey,
+                    width: MediaQuery.of(context).size.width,
+                    margin: EdgeInsets.all(20),
+                    padding: EdgeInsets.all(20),
+                    child: Column(children: [
+                         Image.asset(
                     "assets/images/asf.jpeg",
                     fit: BoxFit.cover,
                     height: 70,
+                  ),
+                  SizedBox(height: 10,),
+                   Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 25.0,
+                        vertical: 14,
+                      ),
+                      child: Text(
+                        "Home",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                    ],)
+                  
                   ),
                 ),
                 GestureDetector(
