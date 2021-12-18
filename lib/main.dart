@@ -94,12 +94,15 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           )
-        : SecondScreen();
+        : /*SecondScreen();*/
 
-    /*    WebView(
-            initialUrl: 'https://eyecandy.salonized.com/widget_bookings/new',
-            javascriptMode: JavascriptMode.unrestricted,
-            debuggingEnabled: true,
-          );*/
+        Container(
+            padding: EdgeInsets.only(top: 25),
+            child: WebView(
+              initialUrl: 'https://mjsentertainment.co.uk/app-home/',
+              javascriptMode: JavascriptMode.unrestricted,
+              debuggingEnabled: true,
+            ),
+          );
   }
 }
