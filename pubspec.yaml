@@ -2,7 +2,7 @@ name: eye_candy
 description: A new Flutter project.
 
 publish_to: 'none'
-version: 1.0.0+4
+version: 1.0.0+1
 
 environment:
   sdk: ">=2.10.0 <3.0.0"
@@ -30,7 +30,7 @@ dev_dependencies:
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/icon.png"
+  image_path: "assets/icon.jpeg"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

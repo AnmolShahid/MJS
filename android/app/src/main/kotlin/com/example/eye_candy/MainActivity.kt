@@ -1,4 +1,4 @@
-package com.ytrex.eye_candy
+package com.ak147.mjsenterntainment
 
 import io.flutter.embedding.android.FlutterActivity
 
